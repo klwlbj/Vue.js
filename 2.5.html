@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuejs</title>
+    <style>
+        .activated{
+            color: red;
+        }
+    </style>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <div @click='handleDivClick'
+            :class='{activated:isActivated}' 
+        >Hello World</div><!-- class事件绑定 -->
+        <div @click='handleDivClick1'
+            :class='[activated,activatedone]' 
+        >Hello World</div>
+        <div :style="[styleObj,{fontSize:'20px'}]" @click='handleDivClick2'>Hello World</div>
+    </div>
+
+
+
+
+    <script>
+        var vm = new Vue({
+            el:'#root',
+            data:{
+                styleObj:{
+                    color:'black',
+                },
+                isActivated:false, 
+                activated:'',
+                activatedone:'activated-one'
+            },
+            methods: {
+                handleDivClick(){
+                     this.isActivated = !this.isActivated;//取反
+                },
+                handleDivClick1(){
+                     this.activated=this.activated==='activated'?'':'activated';
+                },
+                handleDivClick2(){
+                    this.styleObj.color=this.styleObj.color==='black'?'red':'black';
+                }
+            },
+        })
+    </script>
+</body>
+</html>

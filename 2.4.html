@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuejs</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="root">{{fullname}}
+    </div>
+
+
+
+
+    <script>//生命周期函数就是vue实例在某时间点会自动执行的函数
+        var vm = new Vue({
+            el:'#root',
+            data:{
+                 firstname:'Dell',
+                 lastname:'Johnson',
+            },
+            
+            //计算属性,内置缓存,简洁,性能高  
+            computed: {
+                fullname:{
+                    get: function(){
+                        return this.firstname+' '+this.lastname
+                    },
+                    set: function(value){
+                        var arr =value.split(' ');
+                        this.firstname = arr[0];
+                        this.lastname = arr[1];
+                        
+                        
+                    }
+                }
+            },
+        })
+    </script>
+</body>
+</html>
