@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuejs</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="root">
+       <counter :count='0' @change='handleAdd'></counter><!-- 父组件通过属性的形式向子组件传递数据,传过来后子组件只能用，不能修改其值，即单项数据流  -->
+       <counter :count='1' @change='handleAdd'></counter>
+       <div>{{total}}</div>
+    </div>
+
+
+
+
+    <script>
+        //局部组件
+        var counter = {
+            props:['count'],
+            data() {
+                return {
+                    number:this.count//新增一个副本
+                }
+            },
+            template:'<div @click="handleClick">{{number}}</div>',
+            methods: {
+                handleClick(){
+                    this.number++;
+                    this.$emit('change',1)
+                }
+            },
+        }
+        var vm = new Vue({
+            el:'#root',
+            data:{
+                total:1,
+            },
+            components:{
+                counter:counter,
+            },
+            methods:{
+                handleAdd(step){
+                    this.total+=step;
+
+                }
+            }
+            
+        })
+    </script>
+</body>
+</html>

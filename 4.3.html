@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuejs组件参数校验与非props特性</title>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="root">
+       <child :content='123'></child><!-- 父组件传值 -->
+    </div>
+
+
+
+
+    <script>
+        
+        Vue.component('child',{
+            props:{//子组件接收
+                //非props特性，子组件不接收的话，父组件的值会显示在html中   
+                content:{
+                    type:[String,Number],
+                    required:true,//必传
+                    default:'dv',//默认值 
+                    validator:function(value){
+                        return (value.length>5)
+                    }
+                    }
+            },//约束,传其它类型会警告
+            template:'<div>{{content}}</div>'
+        })
+       
+        var vm = new Vue({
+            el:'#root',
+        
+        })
+    </script>
+</body>
+</html>
