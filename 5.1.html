@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>vuejscss动画</title>
+    <style>
+        .v-leave-to,.v-enter{
+            opacity: 0;
+        }
+        
+        .v-enter-active,.v-leave-active{
+            transition: opacity 10s;
+        }
+    </style>
+    <script src="./vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <transition><!-- 加过渡动画效果 -->
+        
+        
+        <div v-if='show'>
+            hw
+        </div>
+    </transition>
+        <button @click=handleClick>change
+        </button>
+    </div>
+
+    <script>
+        
+        
+       
+    
+        var vm = new Vue({
+            el:'#root',
+            data:{
+                show:true,
+            },
+            methods: {
+                handleClick(){
+                    this.show=!this.show 
+                }
+            },
+        })
+    </script>
+</body>
+</html>

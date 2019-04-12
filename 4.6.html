@@ -9,19 +9,24 @@
 </head>
 <body>
     <div id="root">
-        <child content="<p>Dell</p>"></child>
+        <child>
+            <p>Dell</p><!-- child内放插槽-->
+            <div class='header' slot='header'>header</div><!-- 插槽可命名 -->
+            <div class='footer' slot='footer'>footer</div>
+        </child> 
     </div>
 
 
 
 
     <script>
-        Vue.prototype.bus = new Vue();
         
-        Vue.component('child',{
+        
+        Vue.component('child',{/* slot显示dell ,可放默认值*/
             template:`<div>
-                        <p>hhhhh</p>
-                        <div v-html="this.content"></div>
+                        <slot name='header'>default</slot> 
+                        <div>1<div>
+                        <slot name='footer'>default</slot> 
                     </div>`,
         })
     
