@@ -4,6 +4,7 @@ import router from './router'
 import fastClick from 'fastclick'//解决手机端click300毫秒的延迟
 import './assets/styles/reset.css'
 import './assets/styles/border.css'//移动端真正1px边框
+import './assets/styles/iconfont.css'
 
 Vue.config.productionTip = false
 fastClick.attach(document.body)
