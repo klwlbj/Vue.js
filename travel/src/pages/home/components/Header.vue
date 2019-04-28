@@ -4,7 +4,7 @@
         <div class="iconfont back-icon">&#xe624;</div>
     </div>
     <div class="header-input"><span class="iconfont">&#xe632;</span>输入</div>
-    <div class="header-right">城市<span class="iconfont">&#xe62d;</span></div>
+    <div class="header-right">城市<span class="iconfont">&#xe62d;</span></div><!-- 引入iconfont图标 -->
 </div>
 </template>
 
