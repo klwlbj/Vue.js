@@ -6,7 +6,7 @@
           <div class="icon-img">
             <img class="icon-img-content" :src="item.imgUrl" alt>
           </div>
-          <p class="icon-desc">{{item.desc}}</p>
+          <p>{{item.desc}}</p>
         </div>
       </swiper-slide>
     </swiper>
@@ -99,54 +99,48 @@ export default {
   padding-bottom: 50%;
 }
 
-.icon {
-  position: relative;
-  overflow: hidden;
-  float: left;
-  width: 25%;
-  padding-bottom: 25%;
-  height: 0;
+.icons {
+  margin-top .1rem
+  .icon {
+    position: relative;
+    overflow: hidden;
+    float: left;
+    width: 25%;
+    padding-bottom: 25%;
+    height: 0;
 
-  p {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    line-height: 0.44rem;
-    height: 0.44rem;
-    color: $darkTextColor;
-    text-align: center;
-  }
-
-  .icon-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0.44rem;
-    padding: 0.1rem;
-    box-sizing: border-box;
-
-    .icon-img-content {
-      display: block;
-      margin: 0 auto;
-      height: 100%;
+    p {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      line-height: 0.44rem;
+      height: 0.44rem;
+      color: $darkTextColor;
+      text-align: center;
+      ellipsis(); // 引入~styles/mixins.styl的ellipsis()
     }
-  .icon-desc {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 0.44rem;
-    line-height: 0.44rem;
-    text-align: center
-    ellipsis()
-  }
 
-    img {
-      height: 100%;
-      display: block;
-      margin: 0 auto;
+    .icon-img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0.44rem;
+      padding: 0.1rem;
+      box-sizing: border-box;
+
+      .icon-img-content {
+        display: block;
+        margin: 0 auto;
+        height: 100%;
+      }
+
+      img {
+        height: 100%;
+        display: block;
+        margin: 0 auto;
+      }
     }
   }
 }
