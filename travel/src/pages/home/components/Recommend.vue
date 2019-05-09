@@ -17,38 +17,41 @@
 <script>
 export default {
   name: "HomeRecommend",
+  props: {
+    recommendList: Array
+  },
   data() {
     return {
-      recommendList: [
-        {
-          id: "0001",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
-          title: "长隆野生动物世界",
-          desc: "熊猫三胞胎与您共享欢乐时光"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
-          title: "长隆野生动物世界",
-          desc: "熊猫三胞胎与您共享欢乐时光"
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
-          title: "长隆野生动物世界",
-          desc: "熊猫三胞胎与您共享欢乐时光"
-        },
-        {
-          id: "0004",
-          imgUrl:
-            "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
-          title: "长隆野生动物世界",
-          desc: "熊猫三胞胎与您共享欢乐时光"
-        }
-      ]
+      // recommendList: [
+      //   {
+      //     id: "0001",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
+      //     title: "长隆野生动物世界",
+      //     desc: "熊猫三胞胎与您共享欢乐时光"
+      //   },
+      //   {
+      //     id: "0002",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
+      //     title: "长隆野生动物世界",
+      //     desc: "熊猫三胞胎与您共享欢乐时光"
+      //   },
+      //   {
+      //     id: "0003",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
+      //     title: "长隆野生动物世界",
+      //     desc: "熊猫三胞胎与您共享欢乐时光"
+      //   },
+      //   {
+      //     id: "0004",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/sight/p0/1709/41/411f234d79457081a3.img.jpg_200x200_ea02ef99.jpg",
+      //     title: "长隆野生动物世界",
+      //     desc: "熊猫三胞胎与您共享欢乐时光"
+      //   }
+      // ]
     };
   }
 };

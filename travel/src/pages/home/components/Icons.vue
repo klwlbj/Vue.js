@@ -1,6 +1,6 @@
 <template>
   <div class="icons">
-    <swiper>
+    <swiper :options="swiperOption">
       <swiper-slide v-for="(page,index) of pages" :key="index">
         <div class="icon" v-for="item of page" :key="item.id">
           <div class="icon-img">
@@ -15,64 +15,70 @@
 <script>
 export default {
   name: "HomeIcons",
+  props:{
+    iconList:Array,
+  },
   data() {
     return {
-      iconList: [
-        {
-          id: "0001",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
-          desc: "景点门票"
-        },
-        {
-          id: "0002",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",
-          desc: "广州必游"
-        },
-        {
-          id: "0003",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png",
-          desc: "动值物园"
-        },
-        {
-          id: "0004",
-          imgUrl:
-            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png",
-          desc: "自然风光"
-        },
-        {
-          id: "0005",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png",
-          desc: "珠江夜游"
-        },
-        {
-          id: "0006",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png",
-          desc: "一日游"
-        },
-        {
-          id: "0007",
-          imgUrl:
-            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/184e261814a5d07a5d3d08cd29cf590d.png",
-          desc: "长隆"
-        },
-        {
-          id: "0008",
-          imgUrl:
-            "http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png",
-          desc: "亲子月"
-        },
-        {
-          id: "0009",
-          imgUrl:
-            "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/c032ae43b15a3dac34b5e07bb0e46850.png",
-          desc: "canton tower"
-        }
-      ]
+      swiperOption: {
+        autoplay:false
+      },
+      // iconList: [
+      //   {
+      //     id: "0001",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/piao/fusion/1803/95/f3dd6c383aeb3b02.png",
+      //     desc: "景点门票"
+      //   },
+      //   {
+      //     id: "0002",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/piao/fusion/1804/ff/fdf170ee89594b02.png",
+      //     desc: "广州必游"
+      //   },
+      //   {
+      //     id: "0003",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/piao/fusion/1803/76/eb88861d78fb9902.png",
+      //     desc: "动值物园"
+      //   },
+      //   {
+      //     id: "0004",
+      //     imgUrl:
+      //       "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/a40ee278d67000f2a29d2e20f6a029b3.png",
+      //     desc: "自然风光"
+      //   },
+      //   {
+      //     id: "0005",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/piao/fusion/1803/3e/86314b2af03b7502.png",
+      //     desc: "珠江夜游"
+      //   },
+      //   {
+      //     id: "0006",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png",
+      //     desc: "一日游"
+      //   },
+      //   {
+      //     id: "0007",
+      //     imgUrl:
+      //       "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/184e261814a5d07a5d3d08cd29cf590d.png",
+      //     desc: "长隆"
+      //   },
+      //   {
+      //     id: "0008",
+      //     imgUrl:
+      //       "http://img1.qunarzz.com/piao/fusion/1803/47/c2b659e048b11602.png",
+      //     desc: "亲子月"
+      //   },
+      //   {
+      //     id: "0009",
+      //     imgUrl:
+      //       "http://mp-piao-admincp.qunarzz.com/mp_piao_admin_mp_piao_admin/admin/20193/c032ae43b15a3dac34b5e07bb0e46850.png",
+      //     desc: "canton tower"
+      //   }
+      // ]
     };
   },
   computed: {
