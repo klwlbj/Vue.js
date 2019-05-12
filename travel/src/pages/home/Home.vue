@@ -1,10 +1,10 @@
 <template>
   <div>
     <home-header :city="city"></home-header>
-    <home-swiper :swiperList='swiperList'></home-swiper>
-    <home-icons :iconList='iconList'></home-icons>
-    <home-reconmend :recommendList='recommendList'></home-reconmend>
-    <home-weekend :weekendList='weekendList'></home-weekend>
+    <home-swiper :swiperList="swiperList"></home-swiper>
+    <home-icons :iconList="iconList"></home-icons>
+    <home-reconmend :recommendList="recommendList"></home-reconmend>
+    <home-weekend :weekendList="weekendList"></home-weekend>
   </div>
 </template>
 
@@ -27,26 +27,26 @@ export default {
   data() {
     return {
       city: "",
-      swiperList:[],
-      iconList:[],
-      recommendList:[],
-      weekendList:[],
-    }
+      swiperList: [],
+      iconList: [],
+      recommendList: [],
+      weekendList: []
+    };
   },
   methods: {
     getHomeInfo() {
       axios.get("/api/index.json").then(this.getHomeInfoSucc);
     },
     getHomeInfoSucc(res) {
-        res = res.data
-        if (res.ret && res.data){
-            this.city = res.data.city
-            this.swiperList = res.data.swiperList
-            this.iconList = res.data.iconList
-            this.recommendList = res.data.recommendList
-            this.weekendList = res.data.weekendList
-        }
       console.log(res);
+      res = res.data;
+      if (res.ret && res.data) {
+        this.city = res.data.city;
+        this.swiperList = res.data.swiperList;
+        this.iconList = res.data.iconList;
+        this.recommendList = res.data.recommendList;
+        this.weekendList = res.data.weekendList;
+      }
     }
   },
   mounted() {

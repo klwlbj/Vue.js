@@ -6,10 +6,12 @@
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>输入
     </div>
+
     <div class="header-right">
-      {{this.city}}
+      <router-link to="/city">{{this.city}}</router-link>
       <span class="iconfont">&#xe62d;</span>
     </div>
+
     <!-- 引入iconfont图标 -->
   </div>
 </template>
@@ -28,7 +30,7 @@ export default {
 
 .header {
   display: flex;
-  height: 0.86rem;
+  height: $headerHeight;
   background: $bgColor;
   color: #fff;
 }
@@ -38,6 +40,7 @@ export default {
   margin-left: 0.2rem;
   width: 0.64rem;
   float: left;
+  color: white;
 
   .back-icon： {
     text-align: center;
@@ -50,6 +53,9 @@ export default {
   float: right;
   margin: auto;
   text-align: center;
+  a {
+    color: white;
+  }
 }
 
 .header-input {

@@ -1,5 +1,5 @@
 <template>
-  <div class>
+  <div class> <!--样式仿recommend模块-->
     <div class="recommend-title">周末去哪儿</div>
     <ul>
       <li class="item border-bottom" v-for="item of weekendList" :key="item.id">
@@ -19,7 +19,7 @@
 export default {
   name: "HomeWeekend",
   props: {
-    weekendList: Array
+    weekendList: Array //接收
   },
   data() {
     return {
