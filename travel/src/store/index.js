@@ -16,7 +16,7 @@ export default new Vuex.Store({
     mutations: mutations,
     getters: { //类似于computed
         doubleCity(state) {
-            return state.city + ' ' + state.city
+            return state.city 
         }
     }
 })
