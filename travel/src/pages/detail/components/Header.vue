@@ -38,6 +38,9 @@ export default {
   },
   activated() {
     window.addEventListener("scroll", this.handleScroll);
+  }, //全局事件，完成后要解绑
+  deactivated() {
+    window.removeEventListener("scroll", this.handleScroll);
   }
 };
 </script>
@@ -62,6 +65,7 @@ export default {
 }
 
 .header-fixed {
+  z-index: 93;
   position: fixed;
   top: 0;
   left: 0;
