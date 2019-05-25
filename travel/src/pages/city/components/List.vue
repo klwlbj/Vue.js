@@ -39,14 +39,14 @@
   </div>
 </template>
 <script>
-import { mapState,mapMutations } from 'vuex'
+import { mapState, mapMutations } from "vuex";
 import BScroll from "better-scroll";
 
 export default {
   name: "CityList",
-  computed:{
+  computed: {
     ...mapState({
-      currentCity: 'city',
+      currentCity: "city"
     })
   },
   props: {
@@ -57,10 +57,10 @@ export default {
   methods: {
     handleCityClick(city) {
       // this.$store.commit("changeCity", city);
-      this.changeCity(city)
+      this.changeCity(city);
       this.$router.push("/");
     },
-    ...mapMutations(['changeCity'])
+    ...mapMutations(["changeCity"])
   },
   mounted() {
     this.scroll = new BScroll(this.$refs.wrapper);

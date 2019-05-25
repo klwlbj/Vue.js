@@ -36,11 +36,11 @@ export default {
     };
   },
   computed: {
-    ...mapState(["city"])
+    ...mapState(["city"]) //展开运算符，插入数组
   },
   methods: {
     getHomeInfo() {
-      axios.get("/api/index.json?city=" + this.city).then(this.getHomeInfoSucc);
+      axios.get("/api/index.json?city=" + this.city).then(this.getHomeInfoSucc); //获取时带城市参数
     },
     getHomeInfoSucc(res) {
       // console.log(res);
@@ -56,12 +56,12 @@ export default {
   },
   mounted() {
     this.lastCity = this.city;
-    this.getHomeInfo();
+    this.getHomeInfo(); //仅第一次运行
   },
   activated() {
     if (this.lastCity !== this.city) {
       this.lastCity = this.city;
-      this.getHomeInfo();
+      this.getHomeInfo(); //非首次运行地址不同时再去获取json文件
     }
   }
 };
