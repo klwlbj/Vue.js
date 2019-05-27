@@ -4,6 +4,7 @@ import App from './App'
 import router from './router'
 import fastClick from 'fastclick' //解决手机端click300毫秒的延迟
 import store from './store'
+import 'babel-polyfill'
 import './assets/styles/reset.css'
 import './assets/styles/border.css' //移动端真正1px边框
 import './assets/styles/iconfont.css'
